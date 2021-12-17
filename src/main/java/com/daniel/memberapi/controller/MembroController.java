@@ -33,4 +33,15 @@ public class MembroController {
     public String createMember(@RequestBody Membro membro){
         return membroService.createMember(membro);
     }
+
+    @PutMapping("/{id}")
+    public String updateMember(@RequestBody Membro membro, @PathVariable Long id) throws MembroNotFoundException {
+        return membroService.updateMember(id, membro);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMember(@PathVariable Long id) throws MembroNotFoundException {
+        membroService.deleteMember(id);
+    }
 }

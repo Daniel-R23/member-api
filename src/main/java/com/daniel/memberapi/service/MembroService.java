@@ -34,4 +34,15 @@ public class MembroService {
         Membro savedMembro = membroRepository.save(membro);
         return ("Membro criado com sucesso com o ID: " + savedMembro.getId());
     }
+
+    public String updateMember(Long id, Membro membro) throws MembroNotFoundException {
+        verifyIfExists(id);
+        Membro updatedMembro = membroRepository.save(membro);
+        return ("Informações atualizadas com sucesso no membro com o ID: " + updatedMembro.getId());
+    }
+
+    public void deleteMember(Long id) throws MembroNotFoundException {
+         verifyIfExists(id);
+         membroRepository.deleteById(id);
+    }
 }
