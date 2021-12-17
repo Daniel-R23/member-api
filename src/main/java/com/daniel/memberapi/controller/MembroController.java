@@ -1,12 +1,12 @@
 package com.daniel.memberapi.controller;
 
 import com.daniel.memberapi.entity.Membro;
+import com.daniel.memberapi.exceptions.MembroNotFoundException;
 import com.daniel.memberapi.service.MembroService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +21,16 @@ public class MembroController {
     @GetMapping
     public List<Membro> listAll(){
         return membroService.listAll();
+    }
+
+    @GetMapping("/{id}")
+    public Membro findMember(@PathVariable Long id) throws MembroNotFoundException {
+        return membroService.findMember(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public String createMember(@RequestBody Membro membro){
+        return membroService.createMember(membro);
     }
 }
