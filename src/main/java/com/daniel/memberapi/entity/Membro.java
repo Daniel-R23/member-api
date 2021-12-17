@@ -48,9 +48,10 @@ public class Membro {
     @Column
     private ParentescoEnum parentesco;
 
+    /* TODO: Pesquisar como fazer essa relação entre membro no banco de dados
     @Column
     private Membro parente;
-
+    */
     @JoinColumn
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private Endereco endereco;
