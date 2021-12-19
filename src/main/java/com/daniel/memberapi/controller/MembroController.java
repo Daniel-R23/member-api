@@ -15,8 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class MembroController {
 
-    @Autowired
-    private MembroService membroService;
+    private final MembroService membroService;
 
     @GetMapping
     public List<Membro> listAll(){
