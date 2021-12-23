@@ -1,50 +1,51 @@
-package com.daniel.memberapi.entity;
+package com.daniel.memberapi.dto;
 
 import com.daniel.memberapi.enums.*;
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Membro {
+public class MembroDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @NotNull
     private CategoriaMembroEnum categoria;
 
-    @Column(unique = true)
+    @Nullable
     private Long matricula;
 
-    @Column(nullable = false)
+    @NotNull
     private String nome;
 
-    @Column
+    @Nullable
     private LocalDate dataBatismo;
 
-    @Column
+    @Nullable
     private LocalDate dataNascimento;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @NotNull
     private GeneroEnum genero;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Nullable
     private EstadoCivilEnum estadoCivil;
-
-    /*@Enumerated(EnumType.STRING)
-    @Column
+    /*
+    @Enumerated(EnumType.STRING)
+    @Nullable
     private ParentescoEnum parentesco;
 
     @Column
@@ -54,23 +55,23 @@ public class Membro {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private Endereco endereco;
     */
-    @Column
+    @Nullable
     private String telefone;
 
-    @Column
+    @Nullable
     private String profissao;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Nullable
     private CargoEnum cargo;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Nullable
     private MinisterioEnum ministerio;
 
-    @Column
+    @Nullable
     private boolean recebeVisitas;
 
-    @Column
+    @Nullable
     private boolean recebeOracoes;
 }
