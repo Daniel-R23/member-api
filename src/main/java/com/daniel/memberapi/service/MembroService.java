@@ -42,6 +42,7 @@ public class MembroService {
 
     public String updateMember(Long id, MembroDTO membroDTO) throws MembroNotFoundException {
         verifyIfExists(id);
+        membroDTO.setId(id);
         Membro membro = membroMapper.toModel(membroDTO);
         Membro updatedMembro = membroRepository.save(membro);
         return ("Informações atualizadas com sucesso no membro com o ID: " + updatedMembro.getId());
