@@ -44,13 +44,6 @@ public class MembroDTO {
     @Nullable
     private EstadoCivilEnum estadoCivil;
     /*
-    @Enumerated(EnumType.STRING)
-    @Nullable
-    private ParentescoEnum parentesco;
-
-    @Column
-    private Long parente;
-
     @JoinColumn
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private Endereco endereco;

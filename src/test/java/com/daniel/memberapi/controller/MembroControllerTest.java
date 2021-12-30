@@ -6,8 +6,10 @@ import com.daniel.memberapi.entity.Membro;
 import com.daniel.memberapi.mapper.MembroMapper;
 import com.daniel.memberapi.repository.MembroRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,6 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MembroControllerTest {
 
     @Autowired
@@ -62,7 +65,7 @@ public class MembroControllerTest {
 
     @Order(3)
     @Test
-    void whenCalledThenReturnNotFoundedStatus() throws Exception {
+    void whenCalledThenReturnMemberWithIdOne() throws Exception {
         mockMvc
                 .perform(MockMvcRequestBuilders.get("/api/v1/members/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON))

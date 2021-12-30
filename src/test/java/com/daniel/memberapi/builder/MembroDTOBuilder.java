@@ -26,7 +26,7 @@ public class MembroDTOBuilder {
 
     @Builder.Default
     private LocalDate dataNascimento = LocalDate.of(2001,06,25);
-*/
+    */
     @Builder.Default
     private GeneroEnum genero = GeneroEnum.MASCULINO;
 
