@@ -2,7 +2,6 @@ package com.daniel.memberapi.entity;
 
 import com.daniel.memberapi.enums.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -43,11 +42,8 @@ public class Membro {
     @Column
     private EstadoCivilEnum estadoCivil;
 
-    /*
+    @ManyToOne
     @JoinColumn
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    */
-
     private Endereco endereco;
 
     @Column

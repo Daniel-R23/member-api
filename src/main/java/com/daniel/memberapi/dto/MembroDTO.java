@@ -1,5 +1,6 @@
 package com.daniel.memberapi.dto;
 
+import com.daniel.memberapi.entity.Endereco;
 import com.daniel.memberapi.enums.*;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -43,11 +44,10 @@ public class MembroDTO {
     @Enumerated(EnumType.STRING)
     @Nullable
     private EstadoCivilEnum estadoCivil;
-    /*
-    @JoinColumn
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+
+    @Enumerated(EnumType.STRING)
     private Endereco endereco;
-    */
+
     @Nullable
     private String telefone;
 

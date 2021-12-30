@@ -25,6 +25,9 @@ public class Endereco {
     private String logradouro;
 
     @Column
+    private Long numero;
+
+    @Column
     private String complemento;
 
     @Column
