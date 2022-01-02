@@ -23,10 +23,10 @@ public class MembroDTOBuilder {
     private String nome = "MembroTeste";
 
     @Builder.Default
-    private LocalDate dataBatismo = null;
+    private LocalDate dataBatismo = LocalDate.of(2015,11,7);
 
     @Builder.Default
-    private LocalDate dataNascimento = null;
+    private LocalDate dataNascimento = LocalDate.of(2001,5,23);
 
     @Builder.Default
     private GeneroEnum genero = GeneroEnum.MASCULINO;
@@ -36,7 +36,7 @@ public class MembroDTOBuilder {
 
     @Builder.Default
     private Endereco endereco = null;
-//    private Endereco endereco = new Endereco(1L,"61936130","Rua 113",421L, "Apt B", "Timbó", "Maracanaú");
+    //private Endereco endereco = new Endereco(1L,"61936130","Rua 113",421L, "Apt B", "Timbó", "Maracanaú");
 
     @Builder.Default
     private String telefone = "8599999999";

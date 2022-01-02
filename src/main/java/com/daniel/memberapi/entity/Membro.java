@@ -1,6 +1,9 @@
 package com.daniel.memberapi.entity;
 
 import com.daniel.memberapi.enums.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,9 +31,11 @@ public class Membro {
     @Column(nullable = false)
     private String nome;
 
+    @JsonSerialize(using = LocalDateSerializer.class)
     @Column
     private LocalDate dataBatismo;
 
+    @JsonSerialize(using = LocalDateSerializer.class)
     @Column
     private LocalDate dataNascimento;
 

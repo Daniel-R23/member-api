@@ -93,6 +93,7 @@ public class MembroControllerTest {
                 .andExpect(status().is(HttpStatus.NO_CONTENT.value()));
     }
 
+
     public static String asJsonString(final Object obj){
         try{
             return new ObjectMapper().writeValueAsString(obj);
