@@ -35,8 +35,7 @@ public class MembroDTOBuilder {
     private EstadoCivilEnum estadoCivil = EstadoCivilEnum.CASADO;
 
     @Builder.Default
-    private Endereco endereco = null;
-    //private Endereco endereco = new Endereco(1L,"61936130","Rua 113",421L, "Apt B", "Timbó", "Maracanaú");
+    private Endereco endereco = new Endereco(null,"61936130","Rua 113",421L, "Apt B", "Timbó", "Maracanaú");
 
     @Builder.Default
     private String telefone = "8599999999";
